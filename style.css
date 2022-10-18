@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+.container{
+    width: 300px;
+    height: 300px;
+    margin: auto; /*otstupi vnesniye, a auto centruyet po gorizontali*/
+    border: 2px solid black;
+    cursor: url(computer-mouse-pointer-cursor-icon-png-favpng-hk4ueQ3vsRBad0NsT5e9iJQ7k.cur),auto;
+}
+.container div{
+    width: 130px;
+    height: 200px;
+    margin: auto;
+    border: 2px solid black;
+    margin-top: 20px; /*otstup ot roditela*/
+    position: relative;
+    transform: rotate3d(0, 1, 0, 0deg);
+    animation: loop 3s linear infinite ; /*infinete delayet animasku beskonecno, ili mojno napisat kolicestvo povtoreniy*/
+}
+
+@keyframes loop{
+    from{transform: rotate3d(0, 1, 0, 0deg);} /*teje shto dali v transform */
+    to{transform: rotate3d(0, 1, 0, 360deg);}
+}
+
+.container div::before{ /*sozdayom psevdo element  (sinaya poloska)*/
+content: ""; /*bez nego rabotat ne budet*/
+position:absolute; /*bez nego rabotat ne budet */
+height: 100%; /* esli pomenat mestami to ona povernotsa*/
+width: 20px;
+background-color: blue;
+left: 0; /*pozicionirovaniye*/
+}
+.container div::after{
+    content: ""; 
+    position:absolute;
+    height: 100%;
+    width: 20px;
+    background-color: cyan;
+    right: 0;
+}
+
+p{
+    font-size: 14px;
+    background-color: blanchedalmond;
+    font-weight: 900;
+    cursor: url(computer-mouse-pointer-cursor-icon-png-favpng-hk4ueQ3vsRBad0NsT5e9iJQ7k.cur);
+    font-family: 'Bungee Spice', cursive;
+}
+
+.circle{
+    width: 20px;
+    height: 20px;
+    background-color: brown;
+    border-radius: 50%;
+    box-shadow: inset black 4px 2px 11px 15px;
+    transition: 3s;
+    z-index: 1;
+    position: absolute;
+    cursor: url(computer-mouse-pointer-cursor-icon-png-favpng-hk4ueQ3vsRBad0NsT5e9iJQ7k.cur);
+   
+}
+
+.circle:hover{
+    border-radius: 0%;
+    box-shadow:  black 4px 2px 11px 15px;
+    transition: 3s;
+   
+}
+
+.circle div{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    z-index: 2;
+    cursor: url(computer-mouse-pointer-cursor-icon-png-favpng-hk4ueQ3vsRBad0NsT5e9iJQ7k.cur);
+}
